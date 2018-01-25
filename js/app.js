@@ -1,16 +1,16 @@
 //Solicito una frase que será mi paramtero de entrada.
 
-var phraseText= prompt('Ingrese una frase');
+let phraseText= prompt('Ingrese una frase');
 
 /*var cifrado = document.getElementById('cifrado-text');
 var btn = document.getElementById('btn-click');*/
 
 //Valido que si no ingresa ninguna cadena me vuelva a pedir
 
-  while( isNaN(text) !== true || text===' ' ) {
+  while( isNaN(phraseText) !== true || phraseText===' ' ) {
     // alert('Error. Intente nuevamente.');
      
-     var text= prompt('Ingrese una frase');
+     let phraseText= prompt('Ingrese una frase');
      
    }
 
@@ -27,15 +27,15 @@ var btn = document.getElementById('btn-click');*/
 //document.write('La frase ingresada es:  '+text);
 
 //Creando mi función cifrado
-var cipher=function(phrase){
+let cipher = (phrase) => {
 
   //declaro las variables que utilizaré para almacenar mis valores
-  var codAscii;
-  var cipCesar;
-  var newPhrase="";
+  let codAscii;
+  let cipCesar;
+  let newPhrase="";
 
   //Bucle que me sirve para obtener convertir mi frase y cifrarla.
-  for(var i=0; i<phrase.length; i++){
+  for(let i=0; i<phrase.length; i++){
     //Obtengo el código ascii de la letra en su posición i
     codAscii=phrase.charCodeAt(i);
     //Verifico si la frase ingresada está escrita en mayúscula
@@ -48,7 +48,7 @@ var cipher=function(phrase){
    }
 
    //Convierte el codigo ASCII a una letra
-    var cad=String.fromCharCode(cipCesar);
+    let cad=String.fromCharCode(cipCesar);
   //Concatena las letras que van llegando en cada iteración y lo almacena en mi variable
     newPhrase=newPhrase.concat(cad);
   }
@@ -59,13 +59,13 @@ var cipher=function(phrase){
 //Muestra la frase cifrada
 document.write('<br>' +'La frase cifrada es:  '+ cipher(phraseText));
 
-var newPhrase=cipher(phraseText);
+let newPhrase=cipher(phraseText);
 
 //Creando mi función descifrar;
-var decipher=function(newPhrase) {
-  var acum;
-  var valor;
-  var descipherPhrase='';
+let decipher = (newPhrase) => {
+  let acum;
+  let valor;
+  let descipherPhrase='';
 //Bucle que me sirve para obtener convertir mi frase y descifrarla.
   for(var i=0; i<newPhrase.length; i++){
     //Obtengo el código ascii de la letra en su posición i
@@ -80,7 +80,7 @@ var decipher=function(newPhrase) {
     }
 
     //Convierte el codigo ASCII a una letra
-    var str=String.fromCharCode(valor);
+    let str=String.fromCharCode(valor);
     //Concatena las letras que van llegando en cada iteración y lo almacena en mi variable
     descipherPhrase=descipherPhrase.concat(str);
   }
@@ -90,7 +90,7 @@ var decipher=function(newPhrase) {
 //Muestro la frase descifrada en la página
 document.write('<br>' +'La frase decifrada es:  '+ decipher(newPhrase));
 
-console.log(text);
-console.log(cipher(text));
+console.log(phraseText);
+console.log(cipher(phraseText));
 console.log(decipher(newPhrase));
 
