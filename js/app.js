@@ -6,18 +6,8 @@ window.addEventListener('load', function() {
   let cifrado = document.getElementById('cifrado-text');
   let btn = document.getElementById('btn-click');
   let cipherText = document.getElementById('cipher-text');
-  let t = cifrado.value;
-
-   
-  btn.addEventListener('click', (event) => {
-    let t = cifrado.value;
-    cipherText.innerHTML = t;
-  
-    // console.log(t);
-    cifrado.value = '';
-  });
-
-
+  //let t = cifrado.value;
+    
   // Muestro la frase ingresada
   // document.write('La frase ingresada es:  '+text);
 
@@ -51,15 +41,15 @@ window.addEventListener('load', function() {
   };
 
   // Muestra la frase cifrada
-  cipherText.innerHTML = '<br>' + 'La frase cifrada es:  ' + t;
+ // cipherText.innerHTML =   'La frase cifrada es:  ' + t;
   // document.write('<br>' +'La frase cifrada es:  '+ cipher(cifrado.value));
+// console.log(t);
 
-
-  let newPhrase = cipher(t);
+  // let newPhrase = cipher(t);
 
 
   // Creando mi función descifrar;
-  let decipher = (newPhrase) => {
+/*  let decipher = (newPhrase) => {
     let acum;
     let valor;
     let descipherPhrase = '';
@@ -85,9 +75,18 @@ window.addEventListener('load', function() {
     return descipherPhrase;
   };
   // Muestro la frase descifrada en la página
-  // document.write('<br>' + 'La frase decifrada es:  ' + decipher(t));
+  // document.write('<br>' + 'La frase decifrada es:  ' + decipher(t));*/
 
-  console.log(t);
-  console.log(cipher(t));
-  console.log(decipher(t));
+  console.log(cipher(prompt('Ingresa tu cadena a cifrar')));
+  // console.log(t);
+  // console.log(cipher(t));
+  //console.log(decipher(t));
+  btn.addEventListener('click', (event) => {
+    let t = cifrado.value;
+    cipher(t);
+    cipherText.innerHTML = t;
+    
+    // console.log(t);
+    cifrado.value = '';
+  });
 });
